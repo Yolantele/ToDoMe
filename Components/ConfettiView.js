@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
+import {Vibration, View} from 'react-native';
 
 import Confetti from 'react-native-confetti';
-import {View} from 'react-native';
+
+const DURATION = 10000;
 
 class ConfettiView extends Component {
   componentDidMount() {
@@ -14,15 +16,10 @@ class ConfettiView extends Component {
     return (
       <View style={{position: 'absolute', flex: 1}}>
         <Confetti ref={node => (this._confettiView = node)} size={2} />
+        {Vibration.vibrate(DURATION)}
       </View>
     );
   }
 }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//   },
-// });
 
 export default ConfettiView;

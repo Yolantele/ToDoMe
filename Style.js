@@ -19,7 +19,7 @@ export const st = {
     shadowOpacity: 0.1,
     shadowRadius: 3,
     borderRadius: 10,
-    borderColor: COLOURS.MARKS,
+    borderColor: 'grey',
     borderWidth: 1,
     width: '90%',
     marginTop: '10%',
