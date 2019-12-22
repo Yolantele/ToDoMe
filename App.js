@@ -5,9 +5,14 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
+  Vibration,
   View,
 } from 'react-native';
 import {fontBase, st} from './Style';
+
+import {ConfettiView} from './Components';
+
+const DURATION = 10000;
 
 const App = () => {
   const [value, setValue] = useState('');
@@ -32,27 +37,33 @@ const App = () => {
 
   return (
     <>
-      <View style={{...st.strip, backgroundColor: hue.strip}}>
-        <View style={st.featureStrip}>
-          <TouchableOpacity onPress={() => changeHue()}>
-            <View
-              style={{
-                ...st.colorChange,
-                backgroundColor: hue.light,
-                borderColor: hue.light,
-              }}
-            />
-          </TouchableOpacity>
-          <Text style={st.stats}>
-            {`${todo.filter(({done}) => done).length} / ${todo.length}`}
-          </Text>
-        </View>
-      </View>
-
       <View style={{...st.page, backgroundColor: hue.main}}>
+        {todo.filter(({done}) => done).length === todo.length ? (
+          <>
+            <ConfettiView />
+            {Vibration.vibrate(DURATION)}
+          </>
+        ) : null}
+        <View style={{...st.strip, backgroundColor: hue.strip}}>
+          <View style={st.featureStrip}>
+            <TouchableOpacity onPress={() => changeHue()}>
+              <View
+                style={{
+                  ...st.colorChange,
+                  backgroundColor: hue.light,
+                  borderColor: hue.light,
+                }}
+              />
+            </TouchableOpacity>
+            <Text style={st.stats}>
+              {`${todo.filter(({done}) => done).length} / ${todo.length}`}
+            </Text>
+          </View>
+        </View>
+
         <TextInput
           enablesReturnKeyAutomatically
-          style={{...st.input, backgroundColor: hue.strip}}
+          style={{...st.input}}
           clearButtonMode="always"
           autoCapitalize="sentences"
           maxLength={50}
@@ -67,7 +78,6 @@ const App = () => {
             setValue('');
           }}
         />
-
         <ScrollView style={st.todoSection}>
           {todo
             .map(line => {
