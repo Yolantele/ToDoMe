@@ -7,21 +7,24 @@ import {
 } from 'react-native'
 import { COLOURS, ST, TODO_COLOURS } from './Style'
 import { ConfettiView, FlipCorner, StickyHeader, Todos } from './Components'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
+const MAX_ITEMS = 3
 const App = () => {
   const { yellow, pink, blue, green } = TODO_COLOURS
   const [value, setValue] = useState('')
   const [hue, setHue] = useState(pink)
   const [todo, setTodo] = useState([
-    { to: 'go shoppong for christmas', done: true, i: 0, priority: true },
-    { to: 'floss for chrismtas eve', done: true, i: 1, priority: false },
+    { to: '1 Go shoppong for christmas', done: true, i: 0, priority: true },
+    { to: '2 Floss for chrismtas eve', done: true, i: 1, priority: false },
     {
-      to: 'write to fam and friends, write to fam and friends',
+      to: '3 Write to fam and friends, write to fam and friends',
       done: false,
       i: 2,
       priority: true,
     },
+    { to: '4 Go shoppong for christmas', done: true, i: 3, priority: true },
+    { to: '5 Floss for chrismtas eve', done: false, i: 4, priority: false },
   ])
 
   const changeHue = () => {
@@ -30,6 +33,14 @@ const App = () => {
     if (hue === yellow) setHue(green)
     if (hue === green) setHue(pink)
   }
+
+  // useEffect(() => {
+  //   if (todo.length > MAX_ITEMS) {
+  //     let shortened = [...todo].slice(todo.length - MAX_ITEMS)
+
+  //     setTodo(shortened)
+  //   }
+  // }, [])
 
   const resetTodo = () => {
     setTodo([])
@@ -57,7 +68,10 @@ const App = () => {
           returnKeyType="done"
           value={value}
           onSubmitEditing={() => {
-            setTodo([...todo, { i: todo.length, to: value }])
+            setTodo([
+              ...todo,
+              { i: todo.length, to: value, done: false, priority: false },
+            ])
             setValue('')
           }}
         />
