@@ -60,12 +60,6 @@ export const ST = {
     padding: 5,
     paddingHorizontal: 20,
   },
-  todo: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'baseline',
-    margin: 4,
-  },
   todoSection: {
     marginHorizontal: 30,
     marginVertical: 10,

@@ -10,6 +10,7 @@ const Todos = ({ setTodo, todo, line }) => {
   const { weight, size } = FONT
 
   const WITH_EMPHASIS = String(Number(weight) + 400)
+
   return (
     <View style={ST.todo} key={i}>
       <Text
@@ -30,8 +31,7 @@ const Todos = ({ setTodo, todo, line }) => {
           let newList = [...todo]
           newList[i].priority = !priority
           setTodo(newList)
-        }}
-        onResponder>
+        }}>
         - {to}
       </Text>
     </View>

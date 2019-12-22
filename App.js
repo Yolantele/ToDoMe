@@ -1,9 +1,16 @@
+import {
+  Alert,
+  ScrollView,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native'
 import { COLOURS, ST, TODO_COLOURS } from './Style'
-import { ConfettiView, StickyHeader, Todos } from './Components'
+import { ConfettiView, FlipCorner, StickyHeader, Todos } from './Components'
 import React, { useState } from 'react'
-import { ScrollView, TextInput, View } from 'react-native'
 
 const App = () => {
+  const { yellow, pink, blue, green } = TODO_COLOURS
   const [value, setValue] = useState('')
   const [hue, setHue] = useState(pink)
   const [todo, setTodo] = useState([
@@ -17,8 +24,6 @@ const App = () => {
     },
   ])
 
-  const { yellow, pink, blue, green } = TODO_COLOURS
-
   const changeHue = () => {
     if (hue === pink) setHue(blue)
     if (hue === blue) setHue(yellow)
@@ -26,15 +31,19 @@ const App = () => {
     if (hue === green) setHue(pink)
   }
 
-  const ALL_DONE = todo.filter(({ done }) => done).length === todo.length
+  const resetTodo = () => {
+    setTodo([])
+    changeHue()
+  }
+
+  const ALL_DONE =
+    todo.filter(({ done }) => done).length === todo.length && todo.length !== 0
 
   return (
     <>
       <View style={{ ...ST.page, backgroundColor: hue.main }}>
         {ALL_DONE && <ConfettiView />}
-
         <StickyHeader {...{ hue, todo, changeHue }} />
-
         <TextInput
           autoFocus
           enablesReturnKeyAutomatically
@@ -52,10 +61,10 @@ const App = () => {
             setValue('')
           }}
         />
-
         <ScrollView style={ST.todoSection}>
           {todo.map(line => <Todos {...{ line, setTodo, todo }} />).reverse()}
         </ScrollView>
+        <FlipCorner {...{ hue, resetTodo }} />
       </View>
     </>
   )
