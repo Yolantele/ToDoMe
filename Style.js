@@ -1,19 +1,52 @@
-import {COLOURS, FONT} from './Const';
+export const COLOURS = {
+  MARKS: 'darkslategray',
+  FONT: 'darkslategrey',
+}
+export const FONT = {
+  size: 18,
+  family: 'Avenir-light',
+  color: COLOURS.FONT,
+  weight: '400',
+  spacing: 0.7,
+}
 
-export const fontBase = {
+export const FONT_BASE = {
   fontFamily: FONT.family,
   fontWeight: FONT.weight,
   letterSpacing: FONT.spacing,
-};
+}
 
-export const st = {
+export const TODO_COLOURS = {
+  pink: {
+    main: '#ff78ae',
+    strip: '#f56ea4',
+    light: '#ff82b4',
+  },
+  green: {
+    main: '#b2fc83',
+    strip: '#99e36b',
+    light: '#bcff91',
+  },
+  yellow: {
+    main: '#fff385',
+    strip: '#f2e77c',
+    light: '#fff491',
+  },
+  blue: {
+    main: '#7ae9ff',
+    strip: '#62d8f0',
+    light: '#7ae9ff',
+  },
+}
+
+export const ST = {
   page: {
     display: 'flex',
     height: '100%',
     width: '100%',
   },
   input: {
-    ...fontBase,
+    ...FONT_BASE,
     fontSize: FONT.size,
     height: 40,
     shadowOpacity: 0.1,
@@ -27,10 +60,6 @@ export const st = {
     padding: 5,
     paddingHorizontal: 20,
   },
-  strip: {
-    height: 100,
-    width: '100%',
-  },
   todo: {
     display: 'flex',
     flexDirection: 'row',
@@ -41,28 +70,4 @@ export const st = {
     marginHorizontal: 30,
     marginVertical: 10,
   },
-  colorChange: {
-    width: 30,
-    height: 30,
-    borderRadius: 20,
-    borderWidth: 2,
-    marginLeft: 30,
-    shadowOpacity: 0.3,
-    shadowOffset: {width: 0, height: 2},
-    shadowRadius: 3,
-    shadowColor: 'black',
-  },
-  featureStrip: {
-    display: 'flex',
-    width: '90%',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'flex-end',
-    height: 80,
-  },
-  stats: {
-    ...fontBase,
-    color: COLOURS.MARKS,
-    fontSize: FONT.size - 1,
-  },
-};
+}
