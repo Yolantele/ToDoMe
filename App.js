@@ -1,31 +1,17 @@
-import {
-  Alert,
-  ScrollView,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from 'react-native'
 import { COLOURS, ST, TODO_COLOURS } from './Style'
 import { ConfettiView, FlipCorner, StickyHeader, Todos } from './Components'
 import React, { useEffect, useState } from 'react'
+import { ScrollView, TextInput, View } from 'react-native'
+
+import AsyncStorage from '@react-native-community/async-storage'
 
 const MAX_ITEMS = 3
+
 const App = () => {
   const { yellow, pink, blue, green } = TODO_COLOURS
   const [value, setValue] = useState('')
   const [hue, setHue] = useState(pink)
-  const [todo, setTodo] = useState([
-    { to: '1 Go shoppong for christmas', done: true, i: 0, priority: true },
-    { to: '2 Floss for chrismtas eve', done: true, i: 1, priority: false },
-    {
-      to: '3 Write to fam and friends, write to fam and friends',
-      done: false,
-      i: 2,
-      priority: true,
-    },
-    { to: '4 Go shoppong for christmas', done: true, i: 3, priority: true },
-    { to: '5 Floss for chrismtas eve', done: false, i: 4, priority: false },
-  ])
+  const [todo, setTodo] = useState([])
 
   const changeHue = () => {
     if (hue === pink) setHue(blue)
@@ -34,13 +20,36 @@ const App = () => {
     if (hue === green) setHue(pink)
   }
 
-  // useEffect(() => {
-  //   if (todo.length > MAX_ITEMS) {
-  //     let shortened = [...todo].slice(todo.length - MAX_ITEMS)
+  //to do next: shorten items bellow certain number of todos
+  useEffect(() => {
+    //   if (todo.length > MAX_ITEMS) {
+    //     let shortened = [...todo].slice(todo.length - MAX_ITEMS)
 
-  //     setTodo(shortened)
-  //   }
-  // }, [])
+    //     setTodo(shortened)
+    //   }
+    getData()
+  }, [])
+
+  const storeData = async data => {
+    try {
+      await AsyncStorage.setItem('todo', JSON.stringify(data))
+    } catch (e) {
+      console.log('=== e >', e)
+    }
+  }
+
+  const getData = async () => {
+    try {
+      const value = await AsyncStorage.getItem('todo')
+      if (value !== null) {
+        // value previously stored
+        console.log('====== parsed', JSON.parse(value))
+        setTodo(JSON.parse(value))
+      }
+    } catch (e) {
+      console.log('====== e >', e)
+    }
+  }
 
   const resetTodo = () => {
     setTodo([])
@@ -68,11 +77,13 @@ const App = () => {
           returnKeyType="done"
           value={value}
           onSubmitEditing={() => {
-            setTodo([
+            const updated = [
               ...todo,
               { i: todo.length, to: value, done: false, priority: false },
-            ])
+            ]
+            setTodo(updated)
             setValue('')
+            storeData(updated)
           }}
         />
         <ScrollView style={ST.todoSection}>
