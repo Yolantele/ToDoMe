@@ -1,11 +1,17 @@
-import { COLOURS, ST, TODO_COLOURS } from './Style'
-import { ConfettiView, FlipCorner, StickyHeader, Todos } from './Components'
+import {
+  ConfettiView,
+  FlipCorner,
+  StickyHeader,
+  Todos,
+  WriteTodo,
+} from './Components'
 import React, { useEffect, useState } from 'react'
-import { ScrollView, TextInput, View } from 'react-native'
+import { ST, TODO_COLOURS } from './Style'
 
 import AsyncStorage from '@react-native-community/async-storage'
+import { View } from 'react-native'
 
-const MAX_TODO_ITEMS = 3
+// const MAX_TODO_ITEMS = 3
 const TODO_STORE = 'todo'
 const HUE_STORE = 'hue'
 
@@ -15,13 +21,12 @@ const App = () => {
   const [hue, setHue] = useState({})
   const [todo, setTodo] = useState([])
 
-  console.log(todo)
   useEffect(() => {
-    if (todo.length > MAX_TODO_ITEMS) {
-      let shortened = [...todo].slice(todo.length - MAX_TODO_ITEMS)
-      setTodo(shortened)
-      storeData(TODO_STORE, shortened)
-    }
+    // if (todo.length > MAX_TODO_ITEMS) {
+    //   let shortened = [...todo].slice(todo.length - MAX_TODO_ITEMS)
+    //   setTodo(shortened)
+    //   storeData(TODO_STORE, shortened)
+    // }
     getData()
   }, [])
 
@@ -72,33 +77,16 @@ const App = () => {
     if (hue.green) updateHue(pink)
   }
 
-  const ALL_DONE =
+  const isAllDone =
     todo.filter(({ done }) => done).length === todo.length && todo.length !== 0
 
   return (
     <>
       <View style={{ ...ST.page, backgroundColor: hue.main }}>
-        {ALL_DONE && <ConfettiView />}
-        <StickyHeader {...{ hue, todo, changeHue }} />
-        <TextInput
-          autoFocus
-          enablesReturnKeyAutomatically
-          style={{ ...ST.input }}
-          clearButtonMode="always"
-          autoCapitalize="sentences"
-          maxLength={60}
-          placeholder={'✔️ ToDo: '}
-          placeholderTextColor={COLOURS.MARKS}
-          onChangeText={value => setValue(value)}
-          returnKeyType="done"
-          value={value}
-          onSubmitEditing={() => updateTodos(value)}
-        />
-        <ScrollView style={ST.todoSection}>
-          {todo
-            .map(line => <Todos {...{ line, setTodo, todo, storeData }} />)
-            .reverse()}
-        </ScrollView>
+        {isAllDone && <ConfettiView />}
+        <StickyHeader {...{ hue, changeHue, todo }} />
+        <WriteTodo {...{ value, setValue, updateTodos }} />
+        <Todos {...{ todo, setTodo, storeData }} />
         <FlipCorner {...{ hue, resetTodo }} />
       </View>
     </>

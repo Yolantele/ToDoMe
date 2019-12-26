@@ -64,8 +64,4 @@ export const ST = {
     padding: 5,
     paddingHorizontal: 20,
   },
-  todoSection: {
-    marginHorizontal: 30,
-    marginVertical: 10,
-  },
 }

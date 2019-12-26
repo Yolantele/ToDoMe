@@ -5,4 +5,8 @@ export const ST = {
     alignItems: 'baseline',
     margin: 4,
   },
+  todoSection: {
+    marginHorizontal: 30,
+    marginVertical: 10,
+  },
 }
