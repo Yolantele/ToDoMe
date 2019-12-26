@@ -5,34 +5,29 @@ import { ScrollView, TextInput, View } from 'react-native'
 
 import AsyncStorage from '@react-native-community/async-storage'
 
-const MAX_ITEMS = 3
+const MAX_TODO_ITEMS = 3
+const TODO_STORE = 'todo'
+const HUE_STORE = 'hue'
 
 const App = () => {
   const { yellow, pink, blue, green } = TODO_COLOURS
   const [value, setValue] = useState('')
-  const [hue, setHue] = useState(pink)
+  const [hue, setHue] = useState({})
   const [todo, setTodo] = useState([])
 
-  const changeHue = () => {
-    if (hue === pink) setHue(blue)
-    if (hue === blue) setHue(yellow)
-    if (hue === yellow) setHue(green)
-    if (hue === green) setHue(pink)
-  }
-
-  //to do next: shorten items bellow certain number of todos
+  console.log(todo)
   useEffect(() => {
-    //   if (todo.length > MAX_ITEMS) {
-    //     let shortened = [...todo].slice(todo.length - MAX_ITEMS)
-
-    //     setTodo(shortened)
-    //   }
+    if (todo.length > MAX_TODO_ITEMS) {
+      let shortened = [...todo].slice(todo.length - MAX_TODO_ITEMS)
+      setTodo(shortened)
+      storeData(TODO_STORE, shortened)
+    }
     getData()
   }, [])
 
-  const storeData = async data => {
+  const storeData = async (toStore, data) => {
     try {
-      await AsyncStorage.setItem('todo', JSON.stringify(data))
+      await AsyncStorage.setItem(toStore, JSON.stringify(data))
     } catch (e) {
       console.log('=== e >', e)
     }
@@ -40,20 +35,41 @@ const App = () => {
 
   const getData = async () => {
     try {
-      const value = await AsyncStorage.getItem('todo')
-      if (value !== null) {
-        // value previously stored
-        console.log('====== parsed', JSON.parse(value))
-        setTodo(JSON.parse(value))
-      }
+      const value = await AsyncStorage.getItem(TODO_STORE)
+      const value2 = await AsyncStorage.getItem(HUE_STORE)
+      value && setTodo(JSON.parse(value))
+      value2 && setHue(JSON.parse(value2))
     } catch (e) {
-      console.log('====== e >', e)
+      console.log('=== e >', e)
     }
   }
 
   const resetTodo = () => {
     setTodo([])
     changeHue()
+    storeData(TODO_STORE, [])
+  }
+
+  const updateTodos = to => {
+    const updated = [
+      ...todo,
+      { i: todo.length, to, done: false, primary: false },
+    ]
+    setTodo(updated)
+    setValue('')
+    storeData(TODO_STORE, updated)
+  }
+
+  const updateHue = newHue => {
+    setHue(newHue)
+    storeData(HUE_STORE, newHue)
+  }
+
+  const changeHue = async () => {
+    if (hue.pink) updateHue(blue)
+    if (hue.blue) updateHue(yellow)
+    if (hue.yellow) updateHue(green)
+    if (hue.green) updateHue(pink)
   }
 
   const ALL_DONE =
@@ -76,18 +92,12 @@ const App = () => {
           onChangeText={value => setValue(value)}
           returnKeyType="done"
           value={value}
-          onSubmitEditing={() => {
-            const updated = [
-              ...todo,
-              { i: todo.length, to: value, done: false, priority: false },
-            ]
-            setTodo(updated)
-            setValue('')
-            storeData(updated)
-          }}
+          onSubmitEditing={() => updateTodos(value)}
         />
         <ScrollView style={ST.todoSection}>
-          {todo.map(line => <Todos {...{ line, setTodo, todo }} />).reverse()}
+          {todo
+            .map(line => <Todos {...{ line, setTodo, todo, storeData }} />)
+            .reverse()}
         </ScrollView>
         <FlipCorner {...{ hue, resetTodo }} />
       </View>

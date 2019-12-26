@@ -4,7 +4,7 @@ import { Text, View } from 'react-native'
 import React from 'react'
 import { ST } from './style'
 
-const Todos = ({ setTodo, todo, line }) => {
+const Todos = ({ setTodo, todo, line, storeData }) => {
   const { to, done, i, priority } = line
 
   const { weight, size } = FONT
@@ -26,11 +26,13 @@ const Todos = ({ setTodo, todo, line }) => {
           let newList = [...todo]
           newList[i].done = !done
           setTodo(newList)
+          storeData('todo', newList)
         }}
         onLongPress={() => {
           let newList = [...todo]
           newList[i].priority = !priority
           setTodo(newList)
+          storeData('todo', newList)
         }}>
         - {to}
       </Text>

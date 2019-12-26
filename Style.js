@@ -18,21 +18,25 @@ export const FONT_BASE = {
 
 export const TODO_COLOURS = {
   pink: {
+    pink: true,
     main: '#ff78ae',
     strip: '#f56ea4',
     light: '#ff82b4',
   },
   green: {
+    green: true,
     main: '#b2fc83',
     strip: '#99e36b',
     light: '#bcff91',
   },
   yellow: {
+    yellow: true,
     main: '#fff385',
     strip: '#f2e77c',
     light: '#fff491',
   },
   blue: {
+    blue: true,
     main: '#7ae9ff',
     strip: '#62d8f0',
     light: '#7ae9ff',
