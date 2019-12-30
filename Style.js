@@ -3,7 +3,7 @@ export const COLOURS = {
   FONT: 'darkslategrey',
 }
 export const FONT = {
-  size: 18,
+  size: 19,
   family: 'Avenir-light',
   color: COLOURS.FONT,
   weight: '400',

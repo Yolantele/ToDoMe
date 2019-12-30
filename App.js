@@ -1,6 +1,7 @@
 import {
   ConfettiView,
   FlipCorner,
+  ReportProblem,
   StickyHeader,
   Todos,
   WriteTodo,
@@ -11,7 +12,6 @@ import { ST, TODO_COLOURS } from './Style'
 import AsyncStorage from '@react-native-community/async-storage'
 import { View } from 'react-native'
 
-// const MAX_TODO_ITEMS = 3
 const TODO_STORE = 'todo'
 const HUE_STORE = 'hue'
 
@@ -20,15 +20,6 @@ const App = () => {
   const [value, setValue] = useState('')
   const [hue, setHue] = useState({})
   const [todo, setTodo] = useState([])
-
-  useEffect(() => {
-    // if (todo.length > MAX_TODO_ITEMS) {
-    //   let shortened = [...todo].slice(todo.length - MAX_TODO_ITEMS)
-    //   setTodo(shortened)
-    //   storeData(TODO_STORE, shortened)
-    // }
-    getData()
-  }, [])
 
   const storeData = async (toStore, data) => {
     try {
@@ -48,6 +39,10 @@ const App = () => {
       console.log('=== e >', e)
     }
   }
+
+  useEffect(() => {
+    getData()
+  }, [])
 
   const resetTodo = () => {
     setTodo([])
@@ -87,6 +82,8 @@ const App = () => {
         <StickyHeader {...{ hue, changeHue, todo }} />
         <WriteTodo {...{ value, setValue, updateTodos }} />
         <Todos {...{ todo, setTodo, storeData }} />
+        <ReportProblem />
+
         <FlipCorner {...{ hue, resetTodo }} />
       </View>
     </>
