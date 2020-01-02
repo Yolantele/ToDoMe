@@ -7,6 +7,7 @@ export const ST = {
   },
   todoSection: {
     marginHorizontal: 30,
+    marginLeft: '5%',
     marginVertical: 10,
   },
 }
