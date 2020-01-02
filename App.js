@@ -1,16 +1,11 @@
 import React, { useEffect, useState } from 'react'
 
 import AsyncStorage from '@react-native-community/async-storage'
+import { STORES } from './Const'
 import { ScrollView } from 'react-native'
 import StickyNote from './Screens/StickyNote'
 
-const TODO_STORE = 'todo'
-const TODO_STORE_2 = 'todo2'
-const TODO_STORE_3 = 'todo3'
-const HUE_STORE = 'hue'
-const HUE_STORE_2 = 'hue2'
-const HUE_STORE_3 = 'hue3'
-const SCREEN_STORE = 'screen'
+const { TODO_1, TODO_2, TODO_3, HUE_1, HUE_2, HUE_3, SCREEN } = STORES
 
 const MIDDLE_SCREEN_POSITION = 414
 
@@ -19,7 +14,7 @@ const App = () => {
 
   const storeData = async data => {
     try {
-      await AsyncStorage.setItem(SCREEN_STORE, JSON.stringify(data))
+      await AsyncStorage.setItem(SCREEN, JSON.stringify(data))
     } catch (e) {
       console.log('=== error >', e)
     }
@@ -27,7 +22,7 @@ const App = () => {
 
   const getData = async () => {
     try {
-      const value = await AsyncStorage.getItem(SCREEN_STORE)
+      const value = await AsyncStorage.getItem(SCREEN)
       value && setScreen(JSON.parse(value))
     } catch (e) {
       console.log('=== e >', e)
@@ -45,9 +40,9 @@ const App = () => {
         contentOffset={{ x: screen, y: 0 }}
         contentContainerStyle={{ width: '300%' }}
         onMomentumScrollEnd={e => storeData(e.nativeEvent.contentOffset.x)}>
-        <StickyNote todoStore={TODO_STORE} hueStore={HUE_STORE} />
-        <StickyNote todoStore={TODO_STORE_2} hueStore={HUE_STORE_2} />
-        <StickyNote todoStore={TODO_STORE_3} hueStore={HUE_STORE_3} />
+        <StickyNote todoStore={TODO_1} hueStore={HUE_1} />
+        <StickyNote todoStore={TODO_2} hueStore={HUE_2} />
+        <StickyNote todoStore={TODO_3} hueStore={HUE_3} />
       </ScrollView>
     </ScrollView>
   )

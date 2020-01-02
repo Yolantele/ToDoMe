@@ -7,21 +7,24 @@ import {
   WriteTodo,
 } from '../Components'
 import React, { useEffect, useState } from 'react'
-import {TODO_COLOURS } from '../Style'
 
 import AsyncStorage from '@react-native-community/async-storage'
+import { TODO_COLOURS } from '../Style'
 import { View } from 'react-native'
 
 const pageStyle = {
   display: 'flex',
   height: '100%',
   width: '33.3%',
-},
+}
 
 const StickyNote = ({ todoStore, hueStore }) => {
+  const loadRandomColour = () =>
+    [pink, blue, green, yellow][Math.floor(Math.random() * 3)]
+
   const { yellow, pink, blue, green } = TODO_COLOURS
   const [value, setValue] = useState('')
-  const [hue, setHue] = useState(pink)
+  const [hue, setHue] = useState(loadRandomColour)
   const [todo, setTodo] = useState([])
 
   const storeData = async (toStore, data) => {
