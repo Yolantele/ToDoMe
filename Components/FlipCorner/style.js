@@ -4,8 +4,10 @@ export const ST = {
     height: 60,
     shadowOpacity: 0.7,
     shadowRadius: 3,
+    borderWidth: 1,
     shadowColor: 'black',
     borderRadius: 3,
     alignSelf: 'flex-end',
+    elevation: 1,
   },
 }

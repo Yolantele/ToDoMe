@@ -14,7 +14,13 @@ const App = ({ resetTodo, hue }) => (
         { cancelable: true },
       )
     }}>
-    <View style={{ ...ST.corner, backgroundColor: hue.light }} />
+    <View
+      style={{
+        ...ST.corner,
+        backgroundColor: hue.light,
+        borderColor: hue.strip,
+      }}
+    />
   </TouchableOpacity>
 )
 

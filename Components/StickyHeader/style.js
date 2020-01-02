@@ -1,7 +1,7 @@
 import { COLOURS, FONT, FONT_BASE } from '../../Style'
 
 export const ST = {
-  strip: {
+  dark: {
     height: 100,
     width: '100%',
   },
@@ -11,10 +11,11 @@ export const ST = {
     borderRadius: 20,
     borderWidth: 2,
     marginLeft: 30,
-    shadowOpacity: 0.3,
+    shadowOpacity: 0.6,
     shadowOffset: { width: 0, height: 2 },
     shadowRadius: 3,
     shadowColor: 'black',
+    elevation: 1,
   },
   featureStrip: {
     display: 'flex',

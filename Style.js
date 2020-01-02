@@ -21,7 +21,7 @@ export const TODO_COLOURS = {
     pink: true,
     main: '#ff78ae',
     strip: '#f56ea4',
-    light: '#ff82b4',
+    light: '#ff8fbc',
   },
   green: {
     green: true,
@@ -31,15 +31,15 @@ export const TODO_COLOURS = {
   },
   yellow: {
     yellow: true,
-    main: '#fff385',
-    strip: '#f2e77c',
+    main: '#fae37f',
+    strip: '#ede274',
     light: '#fff491',
   },
   blue: {
     blue: true,
-    main: '#7ae9ff',
+    main: '#75e8ff',
     strip: '#62d8f0',
-    light: '#7ae9ff',
+    light: '#99eeff',
   },
 }
 
@@ -50,6 +50,7 @@ export const ST = {
     height: 40,
     shadowOpacity: 0.1,
     shadowRadius: 3,
+    elevation: 1,
     borderRadius: 10,
     borderColor: 'grey',
     borderWidth: 1,

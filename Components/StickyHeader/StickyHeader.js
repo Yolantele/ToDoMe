@@ -4,7 +4,7 @@ import React from 'react'
 import { ST } from './style'
 
 const StickyHeader = ({ hue, changeHue, todo }) => (
-  <View style={{ ...ST.strip, backgroundColor: hue.strip }}>
+  <View style={{ ...ST.dark, backgroundColor: hue.strip }}>
     <StatusBar barStyle="dark-content" />
     <View style={ST.featureStrip}>
       <TouchableOpacity onPress={() => changeHue()}>

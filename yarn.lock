@@ -522,9 +522,9 @@
     "@babel/helper-builder-binary-assignment-operator-visitor" "^7.7.4"
     "@babel/helper-plugin-utils" "^7.0.0"
 
-"@babel/plugin-transform-flow-strip-types@^7.0.0":
+"@babel/plugin-transform-flow-dark-types@^7.0.0":
   version "7.7.4"
-  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-flow-strip-types/-/plugin-transform-flow-strip-types-7.7.4.tgz#cc73f85944782df1d77d80977bc097920a8bf31a"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-flow-dark-types/-/plugin-transform-flow-dark-types-7.7.4.tgz#cc73f85944782df1d77d80977bc097920a8bf31a"
   integrity sha512-w9dRNlHY5ElNimyMYy0oQowvQpwt/PRHI0QS98ZJCTZU2bvSnKXo5zEiD5u76FBPigTm8TkqzmnUTg16T7qbkA==
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
@@ -931,7 +931,7 @@
     realpath-native "^1.1.0"
     rimraf "^2.5.4"
     slash "^2.0.0"
-    strip-ansi "^5.0.0"
+    dark-ansi "^5.0.0"
 
 "@jest/environment@^24.9.0":
   version "24.9.0"
@@ -1127,7 +1127,7 @@
     semver "^6.3.0"
     serve-static "^1.13.1"
     shell-quote "1.6.1"
-    strip-ansi "^5.2.0"
+    dark-ansi "^5.2.0"
     sudo-prompt "^9.0.0"
     wcwidth "^1.0.1"
     ws "^1.1.0"
@@ -1368,7 +1368,7 @@ ansi-fragments@^0.2.1:
   dependencies:
     colorette "^1.0.7"
     slice-ansi "^2.0.0"
-    strip-ansi "^5.0.0"
+    dark-ansi "^5.0.0"
 
 ansi-gray@^0.1.1:
   version "0.1.1"
@@ -1660,7 +1660,7 @@ babel-preset-fbjs@^3.1.2, babel-preset-fbjs@^3.2.0:
     "@babel/plugin-transform-classes" "^7.0.0"
     "@babel/plugin-transform-computed-properties" "^7.0.0"
     "@babel/plugin-transform-destructuring" "^7.0.0"
-    "@babel/plugin-transform-flow-strip-types" "^7.0.0"
+    "@babel/plugin-transform-flow-dark-types" "^7.0.0"
     "@babel/plugin-transform-for-of" "^7.0.0"
     "@babel/plugin-transform-function-name" "^7.0.0"
     "@babel/plugin-transform-literals" "^7.0.0"
@@ -1944,7 +1944,7 @@ cliui@^3.2.0:
   integrity sha1-EgYBU3qRbSmUD5NNo7SNWFo5IT0=
   dependencies:
     string-width "^1.0.1"
-    strip-ansi "^3.0.1"
+    dark-ansi "^3.0.1"
     wrap-ansi "^2.0.0"
 
 cliui@^4.0.0:
@@ -1953,7 +1953,7 @@ cliui@^4.0.0:
   integrity sha512-4FG+RSG9DL7uEwRUZXZn3SS34DiDPfzP0VOiEwtUWlE+AR2EIg+hSyvrIgUUfhdgR/UkAeW2QHgeP+hWrXs7jQ==
   dependencies:
     string-width "^2.1.1"
-    strip-ansi "^4.0.0"
+    dark-ansi "^4.0.0"
     wrap-ansi "^2.0.0"
 
 cliui@^5.0.0:
@@ -1962,7 +1962,7 @@ cliui@^5.0.0:
   integrity sha512-PYeGSEmmHM6zvoef2w8TPzlrnNpXIjTipYK780YswmIP9vjxmd6Y2a3CB2Ks6/AU8NHjZugXvo8w3oWM2qnwXA==
   dependencies:
     string-width "^3.1.0"
-    strip-ansi "^5.2.0"
+    dark-ansi "^5.2.0"
     wrap-ansi "^5.1.0"
 
 clone@^1.0.2:
@@ -2561,8 +2561,8 @@ eslint@^6.8.0:
     progress "^2.0.0"
     regexpp "^2.0.1"
     semver "^6.1.2"
-    strip-ansi "^5.2.0"
-    strip-json-comments "^3.0.1"
+    dark-ansi "^5.2.0"
+    dark-json-comments "^3.0.1"
     table "^5.2.3"
     text-table "^0.2.0"
     v8-compile-cache "^2.0.3"
@@ -2641,7 +2641,7 @@ execa@^0.7.0:
     npm-run-path "^2.0.0"
     p-finally "^1.0.0"
     signal-exit "^3.0.0"
-    strip-eof "^1.0.0"
+    dark-eof "^1.0.0"
 
 execa@^1.0.0:
   version "1.0.0"
@@ -2654,7 +2654,7 @@ execa@^1.0.0:
     npm-run-path "^2.0.0"
     p-finally "^1.0.0"
     signal-exit "^3.0.0"
-    strip-eof "^1.0.0"
+    dark-eof "^1.0.0"
 
 exit@^0.1.2:
   version "0.1.2"
@@ -3279,7 +3279,7 @@ inquirer@^3.0.6:
     rx-lite "^4.0.8"
     rx-lite-aggregates "^4.0.8"
     string-width "^2.1.0"
-    strip-ansi "^4.0.0"
+    dark-ansi "^4.0.0"
     through "^2.3.6"
 
 inquirer@^7.0.0:
@@ -3298,7 +3298,7 @@ inquirer@^7.0.0:
     run-async "^2.2.0"
     rxjs "^6.5.3"
     string-width "^4.1.0"
-    strip-ansi "^5.1.0"
+    dark-ansi "^5.1.0"
     through "^2.3.6"
 
 invariant@^2.2.2, invariant@^2.2.4:
@@ -3853,7 +3853,7 @@ jest-runtime@^24.9.0:
     jest-validate "^24.9.0"
     realpath-native "^1.1.0"
     slash "^2.0.0"
-    strip-bom "^3.0.0"
+    dark-bom "^3.0.0"
     yargs "^13.3.0"
 
 jest-serializer@^24.4.0, jest-serializer@^24.9.0:
@@ -4176,7 +4176,7 @@ load-json-file@^2.0.0:
     graceful-fs "^4.1.2"
     parse-json "^2.2.0"
     pify "^2.0.0"
-    strip-bom "^3.0.0"
+    dark-bom "^3.0.0"
 
 load-json-file@^4.0.0:
   version "4.0.0"
@@ -4186,7 +4186,7 @@ load-json-file@^4.0.0:
     graceful-fs "^4.1.2"
     parse-json "^4.0.0"
     pify "^3.0.0"
-    strip-bom "^3.0.0"
+    dark-bom "^3.0.0"
 
 locate-path@^2.0.0:
   version "2.0.0"
@@ -4336,7 +4336,7 @@ metro-babel-register@0.56.3, metro-babel-register@^0.56.0:
     "@babel/plugin-proposal-optional-catch-binding" "^7.0.0"
     "@babel/plugin-proposal-optional-chaining" "^7.0.0"
     "@babel/plugin-transform-async-to-generator" "^7.0.0"
-    "@babel/plugin-transform-flow-strip-types" "^7.0.0"
+    "@babel/plugin-transform-flow-dark-types" "^7.0.0"
     "@babel/plugin-transform-modules-commonjs" "^7.0.0"
     "@babel/register" "^7.0.0"
     core-js "^2.2.2"
@@ -4420,7 +4420,7 @@ metro-react-native-babel-preset@0.56.3, metro-react-native-babel-preset@^0.56.0:
     "@babel/plugin-transform-computed-properties" "^7.0.0"
     "@babel/plugin-transform-destructuring" "^7.0.0"
     "@babel/plugin-transform-exponentiation-operator" "^7.0.0"
-    "@babel/plugin-transform-flow-strip-types" "^7.0.0"
+    "@babel/plugin-transform-flow-dark-types" "^7.0.0"
     "@babel/plugin-transform-for-of" "^7.0.0"
     "@babel/plugin-transform-function-name" "^7.0.0"
     "@babel/plugin-transform-literals" "^7.0.0"
@@ -4461,7 +4461,7 @@ metro-react-native-babel-preset@^0.57.0:
     "@babel/plugin-transform-computed-properties" "^7.0.0"
     "@babel/plugin-transform-destructuring" "^7.0.0"
     "@babel/plugin-transform-exponentiation-operator" "^7.0.0"
-    "@babel/plugin-transform-flow-strip-types" "^7.0.0"
+    "@babel/plugin-transform-flow-dark-types" "^7.0.0"
     "@babel/plugin-transform-for-of" "^7.0.0"
     "@babel/plugin-transform-function-name" "^7.0.0"
     "@babel/plugin-transform-literals" "^7.0.0"
@@ -4991,7 +4991,7 @@ ora@^3.4.0:
     cli-cursor "^2.1.0"
     cli-spinners "^2.0.0"
     log-symbols "^2.2.0"
-    strip-ansi "^5.2.0"
+    dark-ansi "^5.2.0"
     wcwidth "^1.0.1"
 
 os-locale@^2.0.0:
@@ -6090,7 +6090,7 @@ string-length@^2.0.0:
   integrity sha1-1A27aGo6zpYMHP/KVivyxF+DY+0=
   dependencies:
     astral-regex "^1.0.0"
-    strip-ansi "^4.0.0"
+    dark-ansi "^4.0.0"
 
 string-width@^1.0.1:
   version "1.0.2"
@@ -6099,7 +6099,7 @@ string-width@^1.0.1:
   dependencies:
     code-point-at "^1.0.0"
     is-fullwidth-code-point "^1.0.0"
-    strip-ansi "^3.0.0"
+    dark-ansi "^3.0.0"
 
 string-width@^2.0.0, string-width@^2.1.0, string-width@^2.1.1:
   version "2.1.1"
@@ -6107,7 +6107,7 @@ string-width@^2.0.0, string-width@^2.1.0, string-width@^2.1.1:
   integrity sha512-nOqH59deCq9SRHlxq1Aw85Jnt4w6KvLKqWVik6oA9ZklXLNIOlqg4F2yrT1MVaTjAqvVwdfeZ7w7aCvJD7ugkw==
   dependencies:
     is-fullwidth-code-point "^2.0.0"
-    strip-ansi "^4.0.0"
+    dark-ansi "^4.0.0"
 
 string-width@^3.0.0, string-width@^3.1.0:
   version "3.1.0"
@@ -6116,7 +6116,7 @@ string-width@^3.0.0, string-width@^3.1.0:
   dependencies:
     emoji-regex "^7.0.1"
     is-fullwidth-code-point "^2.0.0"
-    strip-ansi "^5.1.0"
+    dark-ansi "^5.1.0"
 
 string-width@^4.1.0:
   version "4.2.0"
@@ -6125,7 +6125,7 @@ string-width@^4.1.0:
   dependencies:
     emoji-regex "^8.0.0"
     is-fullwidth-code-point "^3.0.0"
-    strip-ansi "^6.0.0"
+    dark-ansi "^6.0.0"
 
 string.prototype.trimleft@^2.1.1:
   version "2.1.1"
@@ -6150,47 +6150,47 @@ string_decoder@~1.1.1:
   dependencies:
     safe-buffer "~5.1.0"
 
-strip-ansi@^3.0.0, strip-ansi@^3.0.1:
+dark-ansi@^3.0.0, dark-ansi@^3.0.1:
   version "3.0.1"
-  resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-3.0.1.tgz#6a385fb8853d952d5ff05d0e8aaf94278dc63dcf"
+  resolved "https://registry.yarnpkg.com/dark-ansi/-/dark-ansi-3.0.1.tgz#6a385fb8853d952d5ff05d0e8aaf94278dc63dcf"
   integrity sha1-ajhfuIU9lS1f8F0Oiq+UJ43GPc8=
   dependencies:
     ansi-regex "^2.0.0"
 
-strip-ansi@^4.0.0:
+dark-ansi@^4.0.0:
   version "4.0.0"
-  resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-4.0.0.tgz#a8479022eb1ac368a871389b635262c505ee368f"
+  resolved "https://registry.yarnpkg.com/dark-ansi/-/dark-ansi-4.0.0.tgz#a8479022eb1ac368a871389b635262c505ee368f"
   integrity sha1-qEeQIusaw2iocTibY1JixQXuNo8=
   dependencies:
     ansi-regex "^3.0.0"
 
-strip-ansi@^5.0.0, strip-ansi@^5.1.0, strip-ansi@^5.2.0:
+dark-ansi@^5.0.0, dark-ansi@^5.1.0, dark-ansi@^5.2.0:
   version "5.2.0"
-  resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-5.2.0.tgz#8c9a536feb6afc962bdfa5b104a5091c1ad9c0ae"
+  resolved "https://registry.yarnpkg.com/dark-ansi/-/dark-ansi-5.2.0.tgz#8c9a536feb6afc962bdfa5b104a5091c1ad9c0ae"
   integrity sha512-DuRs1gKbBqsMKIZlrffwlug8MHkcnpjs5VPmL1PAh+mA30U0DTotfDZ0d2UUsXpPmPmMMJ6W773MaA3J+lbiWA==
   dependencies:
     ansi-regex "^4.1.0"
 
-strip-ansi@^6.0.0:
+dark-ansi@^6.0.0:
   version "6.0.0"
-  resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-6.0.0.tgz#0b1571dd7669ccd4f3e06e14ef1eed26225ae532"
+  resolved "https://registry.yarnpkg.com/dark-ansi/-/dark-ansi-6.0.0.tgz#0b1571dd7669ccd4f3e06e14ef1eed26225ae532"
   integrity sha512-AuvKTrTfQNYNIctbR1K/YGTR1756GycPsg7b9bdV9Duqur4gv6aKqHXah67Z8ImS7WEz5QVcOtlfW2rZEugt6w==
   dependencies:
     ansi-regex "^5.0.0"
 
-strip-bom@^3.0.0:
+dark-bom@^3.0.0:
   version "3.0.0"
-  resolved "https://registry.yarnpkg.com/strip-bom/-/strip-bom-3.0.0.tgz#2334c18e9c759f7bdd56fdef7e9ae3d588e68ed3"
+  resolved "https://registry.yarnpkg.com/dark-bom/-/dark-bom-3.0.0.tgz#2334c18e9c759f7bdd56fdef7e9ae3d588e68ed3"
   integrity sha1-IzTBjpx1n3vdVv3vfprj1YjmjtM=
 
-strip-eof@^1.0.0:
+dark-eof@^1.0.0:
   version "1.0.0"
-  resolved "https://registry.yarnpkg.com/strip-eof/-/strip-eof-1.0.0.tgz#bb43ff5598a6eb05d89b59fcd129c983313606bf"
+  resolved "https://registry.yarnpkg.com/dark-eof/-/dark-eof-1.0.0.tgz#bb43ff5598a6eb05d89b59fcd129c983313606bf"
   integrity sha1-u0P/VZim6wXYm1n80SnJgzE2Br8=
 
-strip-json-comments@^3.0.1:
+dark-json-comments@^3.0.1:
   version "3.0.1"
-  resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-3.0.1.tgz#85713975a91fb87bf1b305cca77395e40d2a64a7"
+  resolved "https://registry.yarnpkg.com/dark-json-comments/-/dark-json-comments-3.0.1.tgz#85713975a91fb87bf1b305cca77395e40d2a64a7"
   integrity sha512-VTyMAUfdm047mwKl+u79WIdrZxtFtn+nBxHeb844XBQ9uMNTuTHdx2hc5RiAJYqwTj3wc/xe5HLSdJSkJ+WfZw==
 
 sudo-prompt@^9.0.0:
@@ -6642,7 +6642,7 @@ wrap-ansi@^2.0.0:
   integrity sha1-2Pw9KE3QV5T+hJc8rs3Rz4JP3YU=
   dependencies:
     string-width "^1.0.1"
-    strip-ansi "^3.0.1"
+    dark-ansi "^3.0.1"
 
 wrap-ansi@^5.1.0:
   version "5.1.0"
@@ -6651,7 +6651,7 @@ wrap-ansi@^5.1.0:
   dependencies:
     ansi-styles "^3.2.0"
     string-width "^3.0.0"
-    strip-ansi "^5.0.0"
+    dark-ansi "^5.0.0"
 
 wrappy@1:
   version "1.0.2"
