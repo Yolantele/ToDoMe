@@ -17,8 +17,7 @@ const fontStyle = {
   opacity: 0.7,
 }
 
-// const SUPPORT_EMAIL = 'mailto:polimathics@gmail.com?subject=Support'
-const SUPPORT_EMAIL = 'mailto:polimathics@gmail.com'
+const SUPPORT_EMAIL = 'mailto:polimathics@gmail.com?subject=Support'
 
 const ReportProblem = () => {
   const launchURL = url => {

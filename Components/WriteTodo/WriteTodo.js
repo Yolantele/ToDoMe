@@ -3,11 +3,10 @@ import React from 'react'
 import { ST } from './style'
 import { TextInput } from 'react-native'
 
-const MAX_LENGTH = 60
+const MAX_LENGTH = 70
 const WriteTodo = ({ updateTodos, setValue, value }) => {
   return (
     <TextInput
-      autoFocus
       enablesReturnKeyAutomatically
       style={{ ...ST.input }}
       clearButtonMode="always"

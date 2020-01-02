@@ -4,6 +4,7 @@ export const ST = {
   input: {
     ...FONT_BASE,
     fontSize: FONT.size,
+    color: FONT.color,
     height: 40,
     shadowOpacity: 0.1,
     shadowRadius: 3,

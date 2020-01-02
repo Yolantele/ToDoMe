@@ -1,10 +1,11 @@
-import { Text, TouchableOpacity, View } from 'react-native'
+import { StatusBar, Text, TouchableOpacity, View } from 'react-native'
 
 import React from 'react'
 import { ST } from './style'
 
 const StickyHeader = ({ hue, changeHue, todo }) => (
   <View style={{ ...ST.strip, backgroundColor: hue.strip }}>
+    <StatusBar barStyle="dark-content" />
     <View style={ST.featureStrip}>
       <TouchableOpacity onPress={() => changeHue()}>
         <View

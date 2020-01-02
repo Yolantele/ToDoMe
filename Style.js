@@ -44,11 +44,6 @@ export const TODO_COLOURS = {
 }
 
 export const ST = {
-  page: {
-    display: 'flex',
-    height: '100%',
-    width: '100%',
-  },
   input: {
     ...FONT_BASE,
     fontSize: FONT.size,

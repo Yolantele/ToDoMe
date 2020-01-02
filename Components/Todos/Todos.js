@@ -1,8 +1,10 @@
 import { COLOURS, FONT, FONT_BASE } from '../../Style'
-import { ScrollView, Text, View } from 'react-native'
+import { ScrollView, Text, Vibration, View } from 'react-native'
 
 import React from 'react'
 import { ST } from './style'
+
+const DURATION = 1000
 
 const Todos = ({ setTodo, todo, storeData }) => {
   const { weight, size } = FONT
@@ -10,7 +12,7 @@ const Todos = ({ setTodo, todo, storeData }) => {
   const WITH_EMPHASIS = String(Number(weight) + 400)
 
   return (
-    <ScrollView style={ST.todoSection}>
+    <ScrollView style={ST.todoSection} indicatorStyle="black">
       {todo
         .map(line => {
           const { to, done, i, priority } = line
@@ -30,6 +32,7 @@ const Todos = ({ setTodo, todo, storeData }) => {
                   newList[i].done = !done
                   setTodo(newList)
                   storeData('todo', newList)
+                  Vibration.vibrate(DURATION)
                 }}
                 onLongPress={() => {
                   let newList = [...todo]

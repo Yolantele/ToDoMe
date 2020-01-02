@@ -1,92 +1,55 @@
-import {
-  ConfettiView,
-  FlipCorner,
-  ReportProblem,
-  StickyHeader,
-  Todos,
-  WriteTodo,
-} from './Components'
 import React, { useEffect, useState } from 'react'
-import { ST, TODO_COLOURS } from './Style'
 
 import AsyncStorage from '@react-native-community/async-storage'
-import { View } from 'react-native'
+import { ScrollView } from 'react-native'
+import StickyNote from './Screens/StickyNote'
 
 const TODO_STORE = 'todo'
+const TODO_STORE_2 = 'todo2'
+const TODO_STORE_3 = 'todo3'
 const HUE_STORE = 'hue'
+const HUE_STORE_2 = 'hue2'
+const HUE_STORE_3 = 'hue3'
+const SCREEN_STORE = 'screen'
+
+const MIDDLE_SCREEN_POSITION = 414
 
 const App = () => {
-  const { yellow, pink, blue, green } = TODO_COLOURS
-  const [value, setValue] = useState('')
-  const [hue, setHue] = useState({})
-  const [todo, setTodo] = useState([])
+  const [screen, setScreen] = useState(MIDDLE_SCREEN_POSITION)
 
-  const storeData = async (toStore, data) => {
+  const storeData = async data => {
     try {
-      await AsyncStorage.setItem(toStore, JSON.stringify(data))
+      await AsyncStorage.setItem(SCREEN_STORE, JSON.stringify(data))
     } catch (e) {
-      console.log('=== e >', e)
+      console.log('=== error >', e)
     }
   }
 
   const getData = async () => {
     try {
-      const value = await AsyncStorage.getItem(TODO_STORE)
-      const value2 = await AsyncStorage.getItem(HUE_STORE)
-      value && setTodo(JSON.parse(value))
-      value2 && setHue(JSON.parse(value2))
+      const value = await AsyncStorage.getItem(SCREEN_STORE)
+      value && setScreen(JSON.parse(value))
     } catch (e) {
       console.log('=== e >', e)
     }
   }
-
   useEffect(() => {
     getData()
   }, [])
 
-  const resetTodo = () => {
-    setTodo([])
-    changeHue()
-    storeData(TODO_STORE, [])
-  }
-
-  const updateTodos = to => {
-    const updated = [
-      ...todo,
-      { i: todo.length, to, done: false, primary: false },
-    ]
-    setTodo(updated)
-    setValue('')
-    storeData(TODO_STORE, updated)
-  }
-
-  const updateHue = newHue => {
-    setHue(newHue)
-    storeData(HUE_STORE, newHue)
-  }
-
-  const changeHue = async () => {
-    if (hue.pink) updateHue(blue)
-    if (hue.blue) updateHue(yellow)
-    if (hue.yellow) updateHue(green)
-    if (hue.green) updateHue(pink)
-  }
-
-  const isAllDone =
-    todo.filter(({ done }) => done).length === todo.length && todo.length !== 0
-
   return (
-    <>
-      <View style={{ ...ST.page, backgroundColor: hue.main }}>
-        {isAllDone && <ConfettiView />}
-        <StickyHeader {...{ hue, changeHue, todo }} />
-        <WriteTodo {...{ value, setValue, updateTodos }} />
-        <Todos {...{ todo, setTodo, storeData }} />
-        <ReportProblem />
-
-        <FlipCorner {...{ hue, resetTodo }} />
-      </View>
-    </>
+    <ScrollView contentContainerStyle={{ height: '100%' }}>
+      <ScrollView
+        horizontal
+        pagingEnabled
+        contentOffset={{ x: screen, y: 0 }}
+        contentContainerStyle={{ width: '300%' }}
+        onMomentumScrollEnd={e => storeData(e.nativeEvent.contentOffset.x)}>
+        <StickyNote todoStore={TODO_STORE} hueStore={HUE_STORE} />
+        <StickyNote todoStore={TODO_STORE_2} hueStore={HUE_STORE_2} />
+        <StickyNote todoStore={TODO_STORE_3} hueStore={HUE_STORE_3} />
+      </ScrollView>
+    </ScrollView>
   )
 }
 
