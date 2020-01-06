@@ -3,7 +3,7 @@ import { Vibration, View } from 'react-native'
 
 import Confetti from 'react-native-confetti'
 
-const PATTERN = [1000, 1000, 30000, 1000, 1000, 30000, 1000, 1000, 100000]
+const PATTERN = [100000]
 
 class ConfettiView extends Component {
   componentDidMount() {
