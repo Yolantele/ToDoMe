@@ -27,11 +27,19 @@ const StickyNote = ({ todoStore, hueStore }) => {
   const [hue, setHue] = useState(loadRandomColour)
   const [todo, setTodo] = useState([])
 
-  const storeData = async (toStore, data) => {
+  const storeData = async data => {
     try {
-      await AsyncStorage.setItem(toStore, JSON.stringify(data))
+      await AsyncStorage.setItem(todoStore, JSON.stringify(data))
     } catch (e) {
-      console.log('=== e >', e)
+      console.log('=== store data error >', e)
+    }
+  }
+
+  const storeHue = async data => {
+    try {
+      await AsyncStorage.setItem(hueStore, JSON.stringify(data))
+    } catch (e) {
+      console.log('=== store Hue error >', e)
     }
   }
 
@@ -39,10 +47,11 @@ const StickyNote = ({ todoStore, hueStore }) => {
     try {
       const value = await AsyncStorage.getItem(todoStore)
       const value2 = await AsyncStorage.getItem(hueStore)
+      console.log('set value is =====', value)
       value && setTodo(JSON.parse(value))
       value2 && setHue(JSON.parse(value2))
     } catch (e) {
-      console.log('=== e >', e)
+      console.log('=== get Data error >', e)
     }
   }
 
@@ -53,7 +62,7 @@ const StickyNote = ({ todoStore, hueStore }) => {
   const resetTodo = () => {
     setTodo([])
     changeHue()
-    storeData(todoStore, [])
+    storeData([])
   }
 
   const updateTodos = to => {
@@ -63,12 +72,12 @@ const StickyNote = ({ todoStore, hueStore }) => {
     ]
     setTodo(updated)
     setValue('')
-    storeData(todoStore, updated)
+    storeData(updated)
   }
 
   const updateHue = newHue => {
     setHue(newHue)
-    storeData(hueStore, newHue)
+    storeHue(newHue)
   }
 
   const changeHue = async () => {
@@ -77,6 +86,8 @@ const StickyNote = ({ todoStore, hueStore }) => {
     if (hue.yellow) updateHue(green)
     if (hue.green) updateHue(pink)
   }
+
+  console.log('todo is ========', todo)
 
   const isAllDone =
     todo.filter(({ done }) => done).length === todo.length && todo.length !== 0

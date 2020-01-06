@@ -31,14 +31,14 @@ const Todos = ({ setTodo, todo, storeData }) => {
                   let newList = [...todo]
                   newList[i].done = !done
                   setTodo(newList)
-                  storeData('todo', newList)
+                  storeData(newList)
                   Vibration.vibrate(DURATION)
                 }}
                 onLongPress={() => {
                   let newList = [...todo]
                   newList[i].priority = !priority
                   setTodo(newList)
-                  storeData('todo', newList)
+                  storeData(newList)
                 }}>
                 - {to}
               </Text>

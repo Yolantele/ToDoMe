@@ -2,7 +2,7 @@ export const ST = {
   corner: {
     width: 60,
     height: 60,
-    shadowOpacity: 0.7,
+    shadowOpacity: 0.5,
     shadowRadius: 3,
     borderWidth: 1,
     shadowColor: 'black',

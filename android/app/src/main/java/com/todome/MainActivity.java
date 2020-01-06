@@ -1,4 +1,4 @@
-package com.todome;
+package com.todome.polimathics;
 
 import com.facebook.react.ReactActivity;
 

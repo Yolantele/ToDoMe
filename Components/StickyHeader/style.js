@@ -11,7 +11,7 @@ export const ST = {
     borderRadius: 20,
     borderWidth: 2,
     marginLeft: 30,
-    shadowOpacity: 0.6,
+    shadowOpacity: 0.4,
     shadowOffset: { width: 0, height: 2 },
     shadowRadius: 3,
     shadowColor: 'black',
