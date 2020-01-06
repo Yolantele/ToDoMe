@@ -6,11 +6,11 @@ import {
   Todos,
   WriteTodo,
 } from '../Components'
+import { Platform, Vibration, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 
 import AsyncStorage from '@react-native-community/async-storage'
 import { TODO_COLOURS } from '../Style'
-import { View } from 'react-native'
 
 const pageStyle = {
   display: 'flex',
@@ -47,7 +47,6 @@ const StickyNote = ({ todoStore, hueStore }) => {
     try {
       const value = await AsyncStorage.getItem(todoStore)
       const value2 = await AsyncStorage.getItem(hueStore)
-      console.log('set value is =====', value)
       value && setTodo(JSON.parse(value))
       value2 && setHue(JSON.parse(value2))
     } catch (e) {
@@ -94,7 +93,13 @@ const StickyNote = ({ todoStore, hueStore }) => {
 
   return (
     <View style={{ ...pageStyle, backgroundColor: hue.main }}>
-      {isAllDone && <ConfettiView />}
+      {isAllDone ? (
+        Platform.OS === 'ios' ? (
+          <ConfettiView />
+        ) : (
+          Vibration.vibrate([100000])
+        )
+      ) : null}
       <StickyHeader {...{ hue, changeHue, todo }} />
       <WriteTodo {...{ value, setValue, updateTodos }} />
       <Todos {...{ todo, setTodo, storeData }} />
