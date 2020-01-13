@@ -1,5 +1,5 @@
+import { Platform, Vibration, View } from 'react-native'
 import React, { Component } from 'react'
-import { Vibration, View } from 'react-native'
 
 import Confetti from 'react-native-confetti'
 
@@ -16,7 +16,7 @@ class ConfettiView extends Component {
     return (
       <View style={{ position: 'absolute', flex: 1 }}>
         <Confetti ref={node => (this._confettiView = node)} size={2} />
-        {Vibration.vibrate(PATTERN)}
+        {Platform.OS === 'ios' && Vibration.vibrate(PATTERN)}
       </View>
     )
   }

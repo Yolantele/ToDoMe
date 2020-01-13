@@ -86,20 +86,13 @@ const StickyNote = ({ todoStore, hueStore }) => {
     if (hue.green) updateHue(pink)
   }
 
-  console.log('todo is ========', todo)
-
   const isAllDone =
     todo.filter(({ done }) => done).length === todo.length && todo.length !== 0
 
+  const isTimeForConfetti = isAllDone && Platform.OS === 'ios'
   return (
     <View style={{ ...pageStyle, backgroundColor: hue.main }}>
-      {isAllDone ? (
-        Platform.OS === 'ios' ? (
-          <ConfettiView />
-        ) : (
-          Vibration.vibrate([100000])
-        )
-      ) : null}
+      {isTimeForConfetti && <ConfettiView />}
       <StickyHeader {...{ hue, changeHue, todo }} />
       <WriteTodo {...{ value, setValue, updateTodos }} />
       <Todos {...{ todo, setTodo, storeData }} />
