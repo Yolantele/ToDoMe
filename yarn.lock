@@ -911,6 +911,7 @@
     "@jest/types" "^24.9.0"
     ansi-escapes "^3.0.0"
     chalk "^2.0.1"
+    dark-ansi "^5.0.0"
     exit "^0.1.2"
     graceful-fs "^4.1.15"
     jest-changed-files "^24.9.0"
@@ -931,7 +932,6 @@
     realpath-native "^1.1.0"
     rimraf "^2.5.4"
     slash "^2.0.0"
-    dark-ansi "^5.0.0"
 
 "@jest/environment@^24.9.0":
   version "24.9.0"
@@ -1103,6 +1103,7 @@
     compression "^1.7.1"
     connect "^3.6.5"
     cosmiconfig "^5.1.0"
+    dark-ansi "^5.2.0"
     deepmerge "^3.2.0"
     envinfo "^7.1.0"
     errorhandler "^1.5.0"
@@ -1127,7 +1128,6 @@
     semver "^6.3.0"
     serve-static "^1.13.1"
     shell-quote "1.6.1"
-    dark-ansi "^5.2.0"
     sudo-prompt "^9.0.0"
     wcwidth "^1.0.1"
     ws "^1.1.0"
@@ -1367,8 +1367,8 @@ ansi-fragments@^0.2.1:
   integrity sha512-DykbNHxuXQwUDRv5ibc2b0x7uw7wmwOGLBUd5RmaQ5z8Lhx19vwvKV+FAsM5rEA6dEcHxX+/Ad5s9eF2k2bB+w==
   dependencies:
     colorette "^1.0.7"
-    slice-ansi "^2.0.0"
     dark-ansi "^5.0.0"
+    slice-ansi "^2.0.0"
 
 ansi-gray@^0.1.1:
   version "0.1.1"
@@ -1943,8 +1943,8 @@ cliui@^3.2.0:
   resolved "https://registry.yarnpkg.com/cliui/-/cliui-3.2.0.tgz#120601537a916d29940f934da3b48d585a39213d"
   integrity sha1-EgYBU3qRbSmUD5NNo7SNWFo5IT0=
   dependencies:
-    string-width "^1.0.1"
     dark-ansi "^3.0.1"
+    string-width "^1.0.1"
     wrap-ansi "^2.0.0"
 
 cliui@^4.0.0:
@@ -1952,8 +1952,8 @@ cliui@^4.0.0:
   resolved "https://registry.yarnpkg.com/cliui/-/cliui-4.1.0.tgz#348422dbe82d800b3022eef4f6ac10bf2e4d1b49"
   integrity sha512-4FG+RSG9DL7uEwRUZXZn3SS34DiDPfzP0VOiEwtUWlE+AR2EIg+hSyvrIgUUfhdgR/UkAeW2QHgeP+hWrXs7jQ==
   dependencies:
-    string-width "^2.1.1"
     dark-ansi "^4.0.0"
+    string-width "^2.1.1"
     wrap-ansi "^2.0.0"
 
 cliui@^5.0.0:
@@ -1961,8 +1961,8 @@ cliui@^5.0.0:
   resolved "https://registry.yarnpkg.com/cliui/-/cliui-5.0.0.tgz#deefcfdb2e800784aa34f46fa08e06851c7bbbc5"
   integrity sha512-PYeGSEmmHM6zvoef2w8TPzlrnNpXIjTipYK780YswmIP9vjxmd6Y2a3CB2Ks6/AU8NHjZugXvo8w3oWM2qnwXA==
   dependencies:
-    string-width "^3.1.0"
     dark-ansi "^5.2.0"
+    string-width "^3.1.0"
     wrap-ansi "^5.1.0"
 
 clone@^1.0.2:
@@ -2022,7 +2022,7 @@ command-exists@^1.2.8:
   resolved "https://registry.yarnpkg.com/command-exists/-/command-exists-1.2.8.tgz#715acefdd1223b9c9b37110a149c6392c2852291"
   integrity sha512-PM54PkseWbiiD/mMsbvW351/u+dafwTJ0ye2qB60G1aGQP9j3xK2gmMDc+R34L3nDtx4qMCitXT75mkbkGJDLw==
 
-commander@^2.19.0, commander@~2.20.3:
+commander@^2.19.0:
   version "2.20.3"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
   integrity sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
@@ -2172,6 +2172,49 @@ cssstyle@^1.0.0:
   integrity sha512-GBrLZYZ4X4x6/QEoBnIrqb8B/f5l4+8me2dkom/j1Gtbxy0kBv6OGzKuAsGM75bkGwGAFkt56Iwg28S3XTZgSA==
   dependencies:
     cssom "0.3.x"
+
+dark-ansi@^3.0.0, dark-ansi@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/dark-ansi/-/dark-ansi-3.0.1.tgz#6a385fb8853d952d5ff05d0e8aaf94278dc63dcf"
+  integrity sha1-ajhfuIU9lS1f8F0Oiq+UJ43GPc8=
+  dependencies:
+    ansi-regex "^2.0.0"
+
+dark-ansi@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/dark-ansi/-/dark-ansi-4.0.0.tgz#a8479022eb1ac368a871389b635262c505ee368f"
+  integrity sha1-qEeQIusaw2iocTibY1JixQXuNo8=
+  dependencies:
+    ansi-regex "^3.0.0"
+
+dark-ansi@^5.0.0, dark-ansi@^5.1.0, dark-ansi@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/dark-ansi/-/dark-ansi-5.2.0.tgz#8c9a536feb6afc962bdfa5b104a5091c1ad9c0ae"
+  integrity sha512-DuRs1gKbBqsMKIZlrffwlug8MHkcnpjs5VPmL1PAh+mA30U0DTotfDZ0d2UUsXpPmPmMMJ6W773MaA3J+lbiWA==
+  dependencies:
+    ansi-regex "^4.1.0"
+
+dark-ansi@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/dark-ansi/-/dark-ansi-6.0.0.tgz#0b1571dd7669ccd4f3e06e14ef1eed26225ae532"
+  integrity sha512-AuvKTrTfQNYNIctbR1K/YGTR1756GycPsg7b9bdV9Duqur4gv6aKqHXah67Z8ImS7WEz5QVcOtlfW2rZEugt6w==
+  dependencies:
+    ansi-regex "^5.0.0"
+
+dark-bom@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/dark-bom/-/dark-bom-3.0.0.tgz#2334c18e9c759f7bdd56fdef7e9ae3d588e68ed3"
+  integrity sha1-IzTBjpx1n3vdVv3vfprj1YjmjtM=
+
+dark-eof@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/dark-eof/-/dark-eof-1.0.0.tgz#bb43ff5598a6eb05d89b59fcd129c983313606bf"
+  integrity sha1-u0P/VZim6wXYm1n80SnJgzE2Br8=
+
+dark-json-comments@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/dark-json-comments/-/dark-json-comments-3.0.1.tgz#85713975a91fb87bf1b305cca77395e40d2a64a7"
+  integrity sha512-VTyMAUfdm047mwKl+u79WIdrZxtFtn+nBxHeb844XBQ9uMNTuTHdx2hc5RiAJYqwTj3wc/xe5HLSdJSkJ+WfZw==
 
 dashdash@^1.12.0:
   version "1.14.1"
@@ -2533,6 +2576,8 @@ eslint@^6.8.0:
     ajv "^6.10.0"
     chalk "^2.1.0"
     cross-spawn "^6.0.5"
+    dark-ansi "^5.2.0"
+    dark-json-comments "^3.0.1"
     debug "^4.0.1"
     doctrine "^3.0.0"
     eslint-scope "^5.0.0"
@@ -2561,8 +2606,6 @@ eslint@^6.8.0:
     progress "^2.0.0"
     regexpp "^2.0.1"
     semver "^6.1.2"
-    dark-ansi "^5.2.0"
-    dark-json-comments "^3.0.1"
     table "^5.2.3"
     text-table "^0.2.0"
     v8-compile-cache "^2.0.3"
@@ -2636,12 +2679,12 @@ execa@^0.7.0:
   integrity sha1-lEvs00zEHuMqY6n68nrVpl/Fl3c=
   dependencies:
     cross-spawn "^5.0.1"
+    dark-eof "^1.0.0"
     get-stream "^3.0.0"
     is-stream "^1.1.0"
     npm-run-path "^2.0.0"
     p-finally "^1.0.0"
     signal-exit "^3.0.0"
-    dark-eof "^1.0.0"
 
 execa@^1.0.0:
   version "1.0.0"
@@ -2649,12 +2692,12 @@ execa@^1.0.0:
   integrity sha512-adbxcyWV46qiHyvSp50TKt05tB4tK3HcmF7/nxfAdhnox83seTDbwnaqKO4sXRy7roHAIFqJP/Rw/AuEbX61LA==
   dependencies:
     cross-spawn "^6.0.0"
+    dark-eof "^1.0.0"
     get-stream "^4.0.0"
     is-stream "^1.1.0"
     npm-run-path "^2.0.0"
     p-finally "^1.0.0"
     signal-exit "^3.0.0"
-    dark-eof "^1.0.0"
 
 exit@^0.1.2:
   version "0.1.2"
@@ -3090,13 +3133,14 @@ growly@^1.3.0:
   integrity sha1-8QdIy+dq+WS3yWyTxrzCivEgwIE=
 
 handlebars@^4.1.2:
-  version "4.5.3"
-  resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.5.3.tgz#5cf75bd8714f7605713511a56be7c349becb0482"
-  integrity sha512-3yPecJoJHK/4c6aZhSvxOyG4vJKDshV36VHp0iVCDVh7o9w2vwi3NSnL2MMPj3YdduqaBcu7cGbggJQM0br9xA==
+  version "4.7.7"
+  resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.7.7.tgz#9ce33416aad02dbd6c8fafa8240d5d98004945a1"
+  integrity sha512-aAcXm5OAfE/8IXkcZvCepKU3VzW1/39Fb5ZuqMtgI/hT8X2YgoMvBY5dLhq/cpOvw7Lk1nK/UF71aLG/ZnVYRA==
   dependencies:
+    minimist "^1.2.5"
     neo-async "^2.6.0"
-    optimist "^0.6.1"
     source-map "^0.6.1"
+    wordwrap "^1.0.0"
   optionalDependencies:
     uglify-js "^3.1.4"
 
@@ -3271,6 +3315,7 @@ inquirer@^3.0.6:
     chalk "^2.0.0"
     cli-cursor "^2.1.0"
     cli-width "^2.0.0"
+    dark-ansi "^4.0.0"
     external-editor "^2.0.4"
     figures "^2.0.0"
     lodash "^4.3.0"
@@ -3279,7 +3324,6 @@ inquirer@^3.0.6:
     rx-lite "^4.0.8"
     rx-lite-aggregates "^4.0.8"
     string-width "^2.1.0"
-    dark-ansi "^4.0.0"
     through "^2.3.6"
 
 inquirer@^7.0.0:
@@ -3291,6 +3335,7 @@ inquirer@^7.0.0:
     chalk "^2.4.2"
     cli-cursor "^3.1.0"
     cli-width "^2.0.0"
+    dark-ansi "^5.1.0"
     external-editor "^3.0.3"
     figures "^3.0.0"
     lodash "^4.17.15"
@@ -3298,7 +3343,6 @@ inquirer@^7.0.0:
     run-async "^2.2.0"
     rxjs "^6.5.3"
     string-width "^4.1.0"
-    dark-ansi "^5.1.0"
     through "^2.3.6"
 
 invariant@^2.2.2, invariant@^2.2.4:
@@ -3839,6 +3883,7 @@ jest-runtime@^24.9.0:
     "@jest/types" "^24.9.0"
     "@types/yargs" "^13.0.0"
     chalk "^2.0.1"
+    dark-bom "^3.0.0"
     exit "^0.1.2"
     glob "^7.1.3"
     graceful-fs "^4.1.15"
@@ -3853,7 +3898,6 @@ jest-runtime@^24.9.0:
     jest-validate "^24.9.0"
     realpath-native "^1.1.0"
     slash "^2.0.0"
-    dark-bom "^3.0.0"
     yargs "^13.3.0"
 
 jest-serializer@^24.4.0, jest-serializer@^24.9.0:
@@ -4173,20 +4217,20 @@ load-json-file@^2.0.0:
   resolved "https://registry.yarnpkg.com/load-json-file/-/load-json-file-2.0.0.tgz#7947e42149af80d696cbf797bcaabcfe1fe29ca8"
   integrity sha1-eUfkIUmvgNaWy/eXvKq8/h/inKg=
   dependencies:
+    dark-bom "^3.0.0"
     graceful-fs "^4.1.2"
     parse-json "^2.2.0"
     pify "^2.0.0"
-    dark-bom "^3.0.0"
 
 load-json-file@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/load-json-file/-/load-json-file-4.0.0.tgz#2f5f45ab91e33216234fd53adab668eb4ec0993b"
   integrity sha1-L19Fq5HjMhYjT9U62rZo607AmTs=
   dependencies:
+    dark-bom "^3.0.0"
     graceful-fs "^4.1.2"
     parse-json "^4.0.0"
     pify "^3.0.0"
-    dark-bom "^3.0.0"
 
 locate-path@^2.0.0:
   version "2.0.0"
@@ -4658,15 +4702,10 @@ minimist@0.0.8:
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.8.tgz#857fcabfc3397d2625b8228262e86aa7a011b05d"
   integrity sha1-hX/Kv8M5fSYluCKCYuhqp6ARsF0=
 
-minimist@^1.1.1, minimist@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.0.tgz#a35008b20f41383eec1fb914f4cd5df79a264284"
-  integrity sha1-o1AIsg9BOD7sH7kU9M1d95omQoQ=
-
-minimist@~0.0.1:
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.10.tgz#de3f98543dbf96082be48ad1a0c7cda836301dcf"
-  integrity sha1-3j+YVD2/lggr5IrRoMfNqDYwHc8=
+minimist@^1.1.1, minimist@^1.2.0, minimist@^1.2.5:
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
+  integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
 
 mixin-deep@^1.2.0:
   version "1.3.2"
@@ -4752,9 +4791,9 @@ negotiator@0.6.2:
   integrity sha512-hZXc7K2e+PgeI1eDBe/10Ard4ekbfrrqG8Ep+8Jmf4JID2bNg7NvCPOZN+kfF574pFQI7mum2AUqDidoKqcTOw==
 
 neo-async@^2.6.0:
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
-  integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
+  integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
 nice-try@^1.0.4:
   version "1.0.5"
@@ -4957,14 +4996,6 @@ open@^6.2.0:
   dependencies:
     is-wsl "^1.1.0"
 
-optimist@^0.6.1:
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/optimist/-/optimist-0.6.1.tgz#da3ea74686fa21a19a111c326e90eb15a0196686"
-  integrity sha1-2j6nRob6IaGaERwybpDrFaAZZoY=
-  dependencies:
-    minimist "~0.0.1"
-    wordwrap "~0.0.2"
-
 optionator@^0.8.1, optionator@^0.8.3:
   version "0.8.3"
   resolved "https://registry.yarnpkg.com/optionator/-/optionator-0.8.3.tgz#84fa1d036fe9d3c7e21d99884b601167ec8fb495"
@@ -4990,8 +5021,8 @@ ora@^3.4.0:
     chalk "^2.4.2"
     cli-cursor "^2.1.0"
     cli-spinners "^2.0.0"
-    log-symbols "^2.2.0"
     dark-ansi "^5.2.0"
+    log-symbols "^2.2.0"
     wcwidth "^1.0.1"
 
 os-locale@^2.0.0:
@@ -6098,34 +6129,34 @@ string-width@^1.0.1:
   integrity sha1-EYvfW4zcUaKn5w0hHgfisLmxB9M=
   dependencies:
     code-point-at "^1.0.0"
-    is-fullwidth-code-point "^1.0.0"
     dark-ansi "^3.0.0"
+    is-fullwidth-code-point "^1.0.0"
 
 string-width@^2.0.0, string-width@^2.1.0, string-width@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-2.1.1.tgz#ab93f27a8dc13d28cac815c462143a6d9012ae9e"
   integrity sha512-nOqH59deCq9SRHlxq1Aw85Jnt4w6KvLKqWVik6oA9ZklXLNIOlqg4F2yrT1MVaTjAqvVwdfeZ7w7aCvJD7ugkw==
   dependencies:
-    is-fullwidth-code-point "^2.0.0"
     dark-ansi "^4.0.0"
+    is-fullwidth-code-point "^2.0.0"
 
 string-width@^3.0.0, string-width@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-3.1.0.tgz#22767be21b62af1081574306f69ac51b62203961"
   integrity sha512-vafcv6KjVZKSgz06oM/H6GDBrAtz8vdhQakGjFIvNrHA6y3HCF1CInLy+QLq8dTJPQ1b+KDUqDFctkdRW44e1w==
   dependencies:
+    dark-ansi "^5.1.0"
     emoji-regex "^7.0.1"
     is-fullwidth-code-point "^2.0.0"
-    dark-ansi "^5.1.0"
 
 string-width@^4.1.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.0.tgz#952182c46cc7b2c313d1596e623992bd163b72b5"
   integrity sha512-zUz5JD+tgqtuDjMhwIg5uFVV3dtqZ9yQJlZVfq4I01/K5Paj5UHj7VyrQOJvzawSVlKpObApbfD0Ed6yJc+1eg==
   dependencies:
+    dark-ansi "^6.0.0"
     emoji-regex "^8.0.0"
     is-fullwidth-code-point "^3.0.0"
-    dark-ansi "^6.0.0"
 
 string.prototype.trimleft@^2.1.1:
   version "2.1.1"
@@ -6149,49 +6180,6 @@ string_decoder@~1.1.1:
   integrity sha512-n/ShnvDi6FHbbVfviro+WojiFzv+s8MPMHBczVePfUpDJLwoLT0ht1l4YwBCbi8pJAveEEdnkHyPyTP/mzRfwg==
   dependencies:
     safe-buffer "~5.1.0"
-
-dark-ansi@^3.0.0, dark-ansi@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/dark-ansi/-/dark-ansi-3.0.1.tgz#6a385fb8853d952d5ff05d0e8aaf94278dc63dcf"
-  integrity sha1-ajhfuIU9lS1f8F0Oiq+UJ43GPc8=
-  dependencies:
-    ansi-regex "^2.0.0"
-
-dark-ansi@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/dark-ansi/-/dark-ansi-4.0.0.tgz#a8479022eb1ac368a871389b635262c505ee368f"
-  integrity sha1-qEeQIusaw2iocTibY1JixQXuNo8=
-  dependencies:
-    ansi-regex "^3.0.0"
-
-dark-ansi@^5.0.0, dark-ansi@^5.1.0, dark-ansi@^5.2.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/dark-ansi/-/dark-ansi-5.2.0.tgz#8c9a536feb6afc962bdfa5b104a5091c1ad9c0ae"
-  integrity sha512-DuRs1gKbBqsMKIZlrffwlug8MHkcnpjs5VPmL1PAh+mA30U0DTotfDZ0d2UUsXpPmPmMMJ6W773MaA3J+lbiWA==
-  dependencies:
-    ansi-regex "^4.1.0"
-
-dark-ansi@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/dark-ansi/-/dark-ansi-6.0.0.tgz#0b1571dd7669ccd4f3e06e14ef1eed26225ae532"
-  integrity sha512-AuvKTrTfQNYNIctbR1K/YGTR1756GycPsg7b9bdV9Duqur4gv6aKqHXah67Z8ImS7WEz5QVcOtlfW2rZEugt6w==
-  dependencies:
-    ansi-regex "^5.0.0"
-
-dark-bom@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/dark-bom/-/dark-bom-3.0.0.tgz#2334c18e9c759f7bdd56fdef7e9ae3d588e68ed3"
-  integrity sha1-IzTBjpx1n3vdVv3vfprj1YjmjtM=
-
-dark-eof@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/dark-eof/-/dark-eof-1.0.0.tgz#bb43ff5598a6eb05d89b59fcd129c983313606bf"
-  integrity sha1-u0P/VZim6wXYm1n80SnJgzE2Br8=
-
-dark-json-comments@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/dark-json-comments/-/dark-json-comments-3.0.1.tgz#85713975a91fb87bf1b305cca77395e40d2a64a7"
-  integrity sha512-VTyMAUfdm047mwKl+u79WIdrZxtFtn+nBxHeb844XBQ9uMNTuTHdx2hc5RiAJYqwTj3wc/xe5HLSdJSkJ+WfZw==
 
 sudo-prompt@^9.0.0:
   version "9.1.1"
@@ -6408,12 +6396,9 @@ uglify-es@^3.1.9:
     source-map "~0.6.1"
 
 uglify-js@^3.1.4:
-  version "3.7.2"
-  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.7.2.tgz#cb1a601e67536e9ed094a92dd1e333459643d3f9"
-  integrity sha512-uhRwZcANNWVLrxLfNFEdltoPNhECUR3lc+UdJoG9CBpMcSnKyWA94tc3eAujB1GcMY5Uwq8ZMp4qWpxWYDQmaA==
-  dependencies:
-    commander "~2.20.3"
-    source-map "~0.6.1"
+  version "3.13.5"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.13.5.tgz#5d71d6dbba64cf441f32929b1efce7365bb4f113"
+  integrity sha512-xtB8yEqIkn7zmOyS2zUNBsYCBRhDkvlNxMMY2smuJ/qA8NCHeQvKCF3i9Z4k8FJH4+PJvZRtMrPynfZ75+CSZw==
 
 ultron@1.0.x:
   version "1.0.2"
@@ -6631,18 +6616,13 @@ wordwrap@^1.0.0:
   resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-1.0.0.tgz#27584810891456a4171c8d0226441ade90cbcaeb"
   integrity sha1-J1hIEIkUVqQXHI0CJkQa3pDLyus=
 
-wordwrap@~0.0.2:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-0.0.3.tgz#a3d5da6cd5c0bc0008d37234bbaf1bed63059107"
-  integrity sha1-o9XabNXAvAAI03I0u68b7WMFkQc=
-
 wrap-ansi@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-2.1.0.tgz#d8fc3d284dd05794fe84973caecdd1cf824fdd85"
   integrity sha1-2Pw9KE3QV5T+hJc8rs3Rz4JP3YU=
   dependencies:
-    string-width "^1.0.1"
     dark-ansi "^3.0.1"
+    string-width "^1.0.1"
 
 wrap-ansi@^5.1.0:
   version "5.1.0"
@@ -6650,8 +6630,8 @@ wrap-ansi@^5.1.0:
   integrity sha512-QC1/iN/2/RPVJ5jYK8BGttj5z83LmSKmvbvrXPNCLZSEb32KKVDJDl/MOt2N01qU2H/FkzEa9PKto1BqDjtd7Q==
   dependencies:
     ansi-styles "^3.2.0"
-    string-width "^3.0.0"
     dark-ansi "^5.0.0"
+    string-width "^3.0.0"
 
 wrappy@1:
   version "1.0.2"
